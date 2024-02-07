@@ -9,7 +9,7 @@ class Snake:
         self.snake = []
         self.initialize_snake()
 
-    def build_snake(self):
+    def create_segment(self):
         """
         Build the snake
         :return: None
@@ -29,7 +29,7 @@ class Snake:
         """
         # Loop through to build snake with three segments
         for _ in range(3):
-            self.build_snake()
+            self.create_segment()
             self.x -= 10
 
     def move(self):
