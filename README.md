@@ -1,27 +1,44 @@
-# Quiz Game
+# Snake Game
 
-This is a simple quiz game implemented in Python. It prompts the user with True or False questions and checks if the answer is correct.
+This is a simple Snake Game implemented in Python using the Turtle module.
 
-## How to Use
+## Features
 
-1. Clone this repository to your local machine.
-2. Make sure you have Python installed.
-3. Navigate to the project directory in your terminal.
-4. Run the `main.py` file using Python.
-5. Answer the True or False questions prompted in the terminal.
-6. After answering all questions, your final score will be displayed.
+- Basic snake movement.
+- Snake grows longer as it consumes food (not implemented in this version).
+- Game ends when the snake collides with the boundaries or itself (not implemented in this version).
 
-## Files
+## Installation
 
-- `quiz_brain.py`: Contains the `QuizBrain` class responsible for managing the quiz logic.
-- `question_model.py`: Defines the `Question` class representing a single question.
-- `data.py`: Contains the list of questions and answers used in the quiz.
-- `main.py`: The main script that initializes the quiz and runs the game loop.
+1. Clone the repository:
 
-## How It Works
+    ```bash
+    git clone https://github.com/your_username/snake-game.git
+    ```
 
-The `main.py` script reads the list of questions from `data.py`, creates `Question` objects, and then initializes a `QuizBrain` object with these questions. It then runs a loop, asking each question in turn until all questions are answered.
+2. Navigate to the project directory:
 
-## Dependencies
+    ```bash
+    cd snake-game
+    ```
 
-This project has no external dependencies beyond Python itself.
+3. Run the game:
+
+    ```bash
+    python main.py
+    ```
+
+## How to Play
+
+- Control the snake's movement using the arrow keys.
+- The snake moves forward automatically.
+- Avoid colliding with the boundaries or yourself.
+
+## Requirements
+
+- Python 3.x
+- Turtle module
+
+## Acknowledgments
+
+This project was inspired by the classic Snake Game and was created for educational purposes.
