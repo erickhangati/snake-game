@@ -1,5 +1,6 @@
-from turtle import Turtle, Screen
+from turtle import Screen
 from time import sleep
+from snake import Snake
 
 # Screen setup
 screen = Screen()
@@ -8,43 +9,17 @@ screen.bgcolor("black")
 screen.title("Snake Game")
 screen.tracer(0)
 
-# Initialize coordinates
-x = 0
-y = 0
-
-snake = []
-
-
-def build_snake():
-    """
-    Build the snake
-    :return: None
-    """
-
-    s = Turtle()
-    s.color("white")
-    s.shape("square")
-    s.shapesize(0.5)
-    s.penup()
-    s.setpos(x, y)
-    snake.append(s)
-
-
-for _ in range(3):
-    build_snake()
-    x -= 10
+# Create snake instance
+snake = Snake()
 
 game_on = True
 while game_on:
+    # Update the snake movement on screen
     screen.update()
     sleep(1)
 
-    for i in range(len(snake) - 1, 0, -1):
-        new_x = snake[i - 1].xcor()
-        new_y = snake[i - 1].ycor()
-        snake[i].goto(new_x, new_y)
-
-    snake[0].forward(10)
+    # Move forwards
+    snake.move()
 
 # Stop screen from disappearing
 screen.exitonclick()
