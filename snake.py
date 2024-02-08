@@ -1,5 +1,10 @@
 from turtle import Turtle
 
+UP = 90
+DOWN = 270
+LEFT = 180
+RIGHT = 0
+
 
 class Snake:
     def __init__(self):
@@ -45,3 +50,35 @@ class Snake:
 
         # Move forwards
         self.snake[0].forward(10)
+
+    def turn_up(self):
+        """
+        Turn snake to head north.
+        :return: None
+        """
+        if self.snake[0].heading() != DOWN:
+            self.snake[0].setheading(UP)
+
+    def turn_down(self):
+        """
+        Turn snake to head north.
+        :return: None
+        """
+        if self.snake[0].heading() != UP:
+            self.snake[0].setheading(DOWN)
+
+    def turn_left(self):
+        """
+        Turn snake to head west.
+        :return: None
+        """
+        if self.snake[0].heading() != RIGHT:
+            self.snake[0].setheading(LEFT)
+
+    def turn_right(self):
+        """
+        Turn snake to head east.
+        :return: None
+        """
+        if self.snake[0].heading() != LEFT:
+            self.snake[0].setheading(RIGHT)
