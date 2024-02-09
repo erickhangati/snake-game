@@ -2,6 +2,7 @@ from turtle import Screen
 from time import sleep
 from snake import Snake
 from food import Food
+from scoreboard import Scoreboard
 
 # Screen setup
 screen = Screen()
@@ -15,6 +16,9 @@ snake = Snake()
 
 # Food setup
 food = Food()
+
+# Scoreboard
+scoreboard = Scoreboard()
 
 # Listen to keystrokes
 screen.listen()
@@ -36,6 +40,7 @@ while game_on:
     if snake.head.distance(food) < 10:
         food.position_food()
         snake.create_segment()
+        scoreboard.update_scores()
 
 # Stop screen from disappearing
 screen.exitonclick()

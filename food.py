@@ -13,6 +13,10 @@ class Food(Turtle):
         self.position_food()
 
     def position_food(self):
-        x = randint(-280, 280)
-        y = randint(-280, 280)
+        """
+        Position food on the screen
+        :return: None
+        """
+        x = randint(-270, 270)
+        y = randint(-270, 270)
         self.goto(x, y)
