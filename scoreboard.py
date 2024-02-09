@@ -18,7 +18,7 @@ class Scoreboard(Turtle):
         Display contact on screen
         :return: None
         """
-        self.write(f"Scoreboard: {self.scores}", font=('Courier', 12, "normal"), align="center")
+        self.write(f"Score: {self.scores}", font=('Courier', 12, "normal"), align="center")
 
     def update_scores(self):
         """
@@ -28,4 +28,12 @@ class Scoreboard(Turtle):
         self.clear()
         self.scores += 1
         self.display_score()
+
+    def game_over(self):
+        """
+        Display GAME OVER
+        :return:
+        """
+        self.goto(0, 0)
+        self.write(f"GAME OVER", font=('Courier', 12, "normal"), align="center")
 
