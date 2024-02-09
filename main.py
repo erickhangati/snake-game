@@ -32,5 +32,10 @@ while game_on:
     # Move forwards
     snake.move()
 
+    # Detect collision with food
+    if snake.head.distance(food) < 10:
+        food.position_food()
+        snake.create_segment()
+
 # Stop screen from disappearing
 screen.exitonclick()

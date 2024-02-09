@@ -10,6 +10,9 @@ class Food(Turtle):
         self.color("green")
         self.speed("fastest")
         self.penup()
+        self.position_food()
+
+    def position_food(self):
         x = randint(-280, 280)
         y = randint(-280, 280)
         self.goto(x, y)

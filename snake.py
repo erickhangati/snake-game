@@ -12,6 +12,7 @@ class Snake:
         self.x = 0
         self.y = 0
         self.snake = []
+        self.head = None
         self.initialize_snake()
 
     def create_segment(self):
@@ -35,6 +36,7 @@ class Snake:
         # Loop through to build snake with three segments
         for _ in range(3):
             self.create_segment()
+            self.head = self.snake[0]
             self.x -= 10
 
     def move(self):
@@ -49,36 +51,36 @@ class Snake:
             self.snake[i].goto(new_x, new_y)
 
         # Move forwards
-        self.snake[0].forward(10)
+        self.head.forward(10)
 
     def turn_up(self):
         """
         Turn snake to head north.
         :return: None
         """
-        if self.snake[0].heading() != DOWN:
-            self.snake[0].setheading(UP)
+        if self.head.heading() != DOWN:
+            self.head.setheading(UP)
 
     def turn_down(self):
         """
         Turn snake to head north.
         :return: None
         """
-        if self.snake[0].heading() != UP:
-            self.snake[0].setheading(DOWN)
+        if self.head.heading() != UP:
+            self.head.setheading(DOWN)
 
     def turn_left(self):
         """
         Turn snake to head west.
         :return: None
         """
-        if self.snake[0].heading() != RIGHT:
-            self.snake[0].setheading(LEFT)
+        if self.head.heading() != RIGHT:
+            self.head.setheading(LEFT)
 
     def turn_right(self):
         """
         Turn snake to head east.
         :return: None
         """
-        if self.snake[0].heading() != LEFT:
-            self.snake[0].setheading(RIGHT)
+        if self.head.heading() != LEFT:
+            self.head.setheading(RIGHT)
