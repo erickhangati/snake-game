@@ -1,6 +1,7 @@
 from turtle import Screen
 from time import sleep
 from snake import Snake
+from food import Food
 
 # Screen setup
 screen = Screen()
@@ -11,6 +12,9 @@ screen.title("Snake Game")
 
 # Create snake instance
 snake = Snake()
+
+# Food setup
+food = Food()
 
 # Listen to keystrokes
 screen.listen()
