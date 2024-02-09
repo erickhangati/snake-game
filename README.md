@@ -5,8 +5,8 @@ This is a simple Snake Game implemented in Python using the Turtle module.
 ## Features
 
 - Basic snake movement.
-- Snake grows longer as it consumes food (not implemented in this version).
-- Game ends when the snake collides with the boundaries or itself (not implemented in this version).
+- Snake grows longer as it consumes food.
+- Game ends when the snake collides with the boundaries or itself.
 
 ## Installation
 
