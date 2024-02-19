@@ -84,3 +84,14 @@ class Snake:
         """
         if self.head.heading() != LEFT:
             self.head.setheading(RIGHT)
+
+    def reset_snake(self):
+        """
+        Reset snake to its starting size.
+        :return: None
+        """
+        for i in range(len(self.snake)):
+            if i > 2:
+                self.snake[i].goto(1000, 1000)
+        self.snake = self.snake[:3]
+        self.head.goto(0, 0)
