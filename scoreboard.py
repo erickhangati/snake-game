@@ -1,5 +1,7 @@
 from turtle import Turtle
 
+HIGHSCORE_FILE = "highscore.txt"
+
 
 class Scoreboard(Turtle):
     scores = 0
@@ -19,7 +21,12 @@ class Scoreboard(Turtle):
         Display contact on screen
         :return: None
         """
-        self.write(f"Score: {self.scores} | High Score: {self.high_score}", font=('Courier', 12, "normal"), align="center")
+        with open(HIGHSCORE_FILE) as file:
+            content = file.read()
+            highscore = content if content else self.high_score
+
+            self.write(f"Score: {self.scores} | High Score: {highscore}", font=('Courier', 12, "normal"),
+                       align="center")
 
     def update_scores(self):
         """
@@ -33,10 +40,15 @@ class Scoreboard(Turtle):
     def reset_score(self):
         if self.scores > self.high_score:
             self.high_score = self.scores
+            self.save_highscore()
 
         self.clear()
         self.scores = 0
         self.display_score()
+
+    def save_highscore(self):
+        with open(HIGHSCORE_FILE, "w") as file:
+            file.write(str(self.high_score))
 
     def game_over(self):
         """
@@ -45,4 +57,3 @@ class Scoreboard(Turtle):
         """
         self.goto(0, 0)
         self.write(f"GAME OVER", font=('Courier', 12, "normal"), align="center")
-
